@@ -21,7 +21,7 @@ var firebaseConfig = {
     })
     localStorage.setItem("room_name",room_name)
 
-    window.location="kwitter_room_page.html"
+    window.location="chat_room_page.html"
   }
 
   function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
