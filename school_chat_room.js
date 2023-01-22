@@ -21,14 +21,14 @@ var firebaseConfig = {
     })
     localStorage.setItem("room_name",room_name)
 
-    window.location="chat_room_page.html"
+    window.location="chat_page.html"
   }
 
   function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
      Room_names = childKey;
     //Start code
 console.log(Room_names)
-row="<div class='room_name' id="+Room_names+"onclick='redirectToRoomName(this.id)'>#"+Room_names+"</div> <hr>"
+row="<div class='room_name' id='"+Room_names+"' onclick='redirectToRoomName(this.id)'>#"+Room_names+"</div> <hr>"
 document.getElementById("output").innerHTML +=row
     //End code
     });});}
@@ -39,7 +39,7 @@ console.log(name)
 
 localStorage.setItem("room_name",name)
 
-window.location="chat_room_page.html"
+window.location="chat_page.html"
 }
 
 function logout(){
